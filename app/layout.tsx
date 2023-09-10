@@ -22,8 +22,8 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          //{inter.className}
-          className="max-w-7xl mx-auto "
+        //{inter.className}
+        //className="max-w-7xl mx-auto h-full "
         >
           <TosterProvider />
           <ModalProvider />
