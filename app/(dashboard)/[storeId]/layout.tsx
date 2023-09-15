@@ -28,8 +28,10 @@ export default async function DashboardLayout({
   }
   return (
     <>
-      <Navbar />
-      {children}
+      <div className="max-w-7xl mx-auto ">
+        <Navbar />
+        {children}
+      </div>
     </>
   );
 }

@@ -6,9 +6,10 @@ import { useParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import { ProductColumn, columns } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 import { ApiList } from "@/components/ui/api-list";
+
+import { ProductColumn, columns } from "./columns";
 
 interface ProductClientProps {
   data: ProductColumn[];
@@ -31,7 +32,7 @@ const ProductClient: React.FC<ProductClientProps> = ({ data }) => {
         </Button>
       </div>
       <Separator />
-      <DataTable searchKey="label" columns={columns} data={data} />
+      <DataTable searchKey="name" columns={columns} data={data} />
       <Heading title="API" description="API calls for Products" />
       <Separator />
       <ApiList entityName="products" entityIdName="productId" />
