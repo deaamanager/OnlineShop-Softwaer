@@ -5,6 +5,7 @@ import { ModalProvider } from "@/providers/modal-provider";
 import { TosterProvider } from "@/providers/toast-provider";
 import "./globals.css";
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/providers/theme-provider";
 //import prismadb from "@/lib/prismadb";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +26,11 @@ export default function RootLayout({
         //{inter.className}
         //className="max-w-7xl mx-auto h-full "
         >
-          <TosterProvider />
-          <ModalProvider />
-          {children}
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <TosterProvider />
+            <ModalProvider />
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
